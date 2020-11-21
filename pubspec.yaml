@@ -1,0 +1,33 @@
+name: flutter_example
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.10.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flame: ^0.28.0
+  flame_scrolling_sprite: ^0.0.3
+  # flame_audio: 0.1.0-rc1
+
+  cupertino_icons: ^1.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: false
+
+  assets:
+   - assets/images/crate.png
+   - assets/images/explosion.png
+   - assets/images/Dog_running.png
+   - assets/audio/explosion.mp3
+   - assets/audio/explosion.mp3
+   - assets/audio/miss.mp3
+   - assets/audio/music.ogg
