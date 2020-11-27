@@ -26,6 +26,7 @@ flutter:
   assets:
    - assets/images/crate.png
    - assets/images/explosion.png
+   - assets/images/cloud.png
    - assets/images/Dog_running.png
    - assets/audio/explosion.mp3
    - assets/audio/explosion.mp3
