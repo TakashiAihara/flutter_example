@@ -1,0 +1,52 @@
+@startuml
+set namespaceSeparator ::
+
+class "flutter_example::main.dart::Palette" {
+  {static} +PaletteEntry white
+  {static} +PaletteEntry black
+  {static} +PaletteEntry blue
+  {static} +PaletteEntry whiteAlpha
+}
+
+"flutter_example::main.dart::Palette" o-- "flame::palette.dart::PaletteEntry"
+
+class "flutter_example::main.dart::Cloud" {
+  +double speed
+  +void render()
+  +void update()
+}
+
+"flame::components::component.dart::SpriteComponent" <|-- "flutter_example::main.dart::Cloud"
+"flame::components::mixins::has_game_ref.dart::HasGameRef<T>" <|-- "flutter_example::main.dart::Cloud"
+"flame::components::mixins::resizable.dart::Resizable" <|-- "flutter_example::main.dart::Cloud"
+
+class "flutter_example::main.dart::Dog" {
+  +double fallSpeed
+  +double jumpSpeed
+  +double ySpeed
+  {static} +double dogHeight
+  {static} +double dogWidth
+  +void jump()
+  +void render()
+  +void update()
+  +void onMount()
+}
+
+"flame::components::animation_component.dart::AnimationComponent" <|-- "flutter_example::main.dart::Dog"
+"flame::components::mixins::has_game_ref.dart::HasGameRef<T>" <|-- "flutter_example::main.dart::Dog"
+
+class "flutter_example::main.dart::MyGame" {
+  {static} +double initialX
+  {static} +double initialY
+  +Dog dog
+  +void onTapDown()
+  +void render()
+  +void update()
+}
+
+"flutter_example::main.dart::MyGame" o-- "flutter_example::main.dart::Dog"
+"flame::game::base_game.dart::BaseGame" <|-- "flutter_example::main.dart::MyGame"
+"flame::gestures.dart::TapDetector" <|-- "flutter_example::main.dart::MyGame"
+
+
+@enduml

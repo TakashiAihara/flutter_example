@@ -1,6 +1,6 @@
 import 'dart:math' as math;
 import 'dart:ui';
-import 'package:flame/components/animation_component.dart';
+// import 'package:flame/components/animation_component.dart';
 import 'package:flame/anchor.dart';
 import 'package:flame/components/mixins/resizable.dart';
 import 'package:flame/gestures.dart';
@@ -9,6 +9,7 @@ import 'package:flame/components/mixins/has_game_ref.dart';
 import 'package:flame/game.dart';
 import 'package:flame/palette.dart';
 import 'package:flame/flame.dart';
+import 'package:flame/sprite.dart';
 import 'package:flutter/material.dart';
 
 math.Random rng = new math.Random();
@@ -16,6 +17,7 @@ math.Random rng = new math.Random();
 void main() async {
   await Flame.init();
   await Flame.images.loadAll(['Dog_running.png', 'cloud.png']);
+  Sprite
   final game = MyGame();
   runApp(game.widget);
 }
@@ -130,15 +132,15 @@ class MyGame extends BaseGame with TapDetector {
 
   @override
   void render(Canvas c) {
-    // c.drawRect(
-    // Rect.fromLTWH(0, 0, size.width, size.height), Palette.blue.paint);
-    // c.drawRect(
-    //     Rect.fromLTWH(0, initialY + Dog.dogHeight, size.width, size.height),
-    //     Palette.black.paint);
-    // c.drawRect(
-    //     Rect.fromLTWH(
-    //         0, initialY + (Dog.dogHeight / 2), size.width, size.height),
-    //     Palette.black.paint);
+    c.drawRect(
+        Rect.fromLTWH(0, 0, size.width, size.height), Palette.blue.paint);
+    c.drawRect(
+        Rect.fromLTWH(0, initialY + Dog.dogHeight, size.width, size.height),
+        Palette.black.paint);
+    c.drawRect(
+        Rect.fromLTWH(
+            0, initialY + (Dog.dogHeight / 2), size.width, size.height),
+        Palette.black.paint);
     super.render(c);
   }
 
